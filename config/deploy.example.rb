@@ -3,8 +3,9 @@ default_run_options[:pty] = true
 set :user, "{SSH USERNAME}"
 set :domain, "{DOMAIN OF APPLICATION}"
 set :host, "{DREAMHOST DOMAIN}"
+set :application, "koguma"
 
-set :repository,  "#{user}@#{host}:{PATH TO REPOSITORY}"
+set :repository,  "#{user}@#{host}:{PATH TO REPOSITORY}/#{application}.git"
 set :deploy_to, "/home/#{user}/#{domain}" 
 set :deploy_via, :remote_cache
 set :scm, "git"
