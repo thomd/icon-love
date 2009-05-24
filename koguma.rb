@@ -35,27 +35,16 @@ get '/' do
   haml :index
 end
 
-get '/koguma.css' do
-  content_type 'text/css'
-  sass :beauty
+get '/new' do
+  haml :new
 end
 
-use_in_file_templates!
-__END__
+get '/bookmarklet' do
+  haml :bookmarklet
+end
 
-@@index
-!!! Strict
-%html
-  %head
-    %meta{'http-equiv' => "Content-Type", :content => "text/html; charset=utf-8"}
-    %link{:rel => 'stylesheet', :href => '/koguma.css', :type => 'text/css'}
-    %title= "favicon love"
-  %body
-    %h1= "favicon love"
+get '/:stylesheet.css' do
+  headers 'Content-Type' => 'text/css; charset=utf-8'
+  sass params[:stylesheet].to_sym
+end
 
-@@koguma
-*
-  :margin 0
-  :padding 0
-body
-  :font-family Helvetica Neue, Helvetica, Arial, sans-serif

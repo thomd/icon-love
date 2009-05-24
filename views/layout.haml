@@ -1,0 +1,25 @@
+!!! Strict
+%html
+  %head
+    %meta{'http-equiv' => "Content-Type", :content => "text/html; charset=utf-8"}
+    %link{:rel => 'stylesheet', :href => 'koguma.css', :type => 'text/css'}
+    %title I &hearts; favicons
+  %body
+    #wrapper
+      #header
+        #logo
+          %h1
+            %a{:href => "/"} Favicon Love
+        #nav
+          %ul
+            %li
+              %a{:href => "/new"} Post Favicon
+            %li
+              %a{:href => "/bookmarklet"} Bookmarklet
+      #content
+        = yield
+      #footer
+        %a{:href => "http://github.com/thomd/koguma/commits/master"} koguma
+        is a 
+        %a{:href => "http://www.sinatrarb.com/"} sinatra
+        application
