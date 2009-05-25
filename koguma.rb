@@ -6,7 +6,7 @@ require 'dm-core'
 
 # ----- model -----------------------------------------------------------------
 
-DataMapper.setup(:default, (ENV["DATABASE_URL"] || "sqlite3://#{Dir.pwd}/favicon.sqlite3"))
+DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/favicon.sqlite3")
 
 class Favicon
   include DataMapper::Resource
