@@ -72,6 +72,7 @@ end
 
 
 get '/' do
+  @favicons = Favicon.all(:order => [:created_on.asc])
   haml :index
 end
 

@@ -1,1 +1,4 @@
-favicons ...
+%ul
+  - @favicons.each do |favicon|
+    %li
+      %img{:src => "data:image/vnd.microsoft.icon;base64," + favicon.data}
