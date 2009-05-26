@@ -13,6 +13,7 @@ Gem.clear_paths
 
 disable :run
 set :raise_errors, true
+set :reload, true
 set :environment, (ENV['RACK_ENV'] || :development).to_sym
 set :app_file, 'koguma.rb'
 
