@@ -12,52 +12,77 @@ a
   &:hover
     :text-decoration underline
 
-#wrapper
-  :margin 0 auto
-  :width 900px
+ul
+  :list-style none
+
+
+
+#container
+  :margin 2em auto
+  :width 960px
+  :overflow hidden
   
 #header,
 #content,
 #footer
   :float left
-  :width 100%
+  :width inherit
 
 #header
-  :border-bottom 1px dotted #CCC
-  :padding 3em 0
+  :border-bottom 1px dotted #FF2B06
   #logo
     :float left
-    :width auto
     h1
       :display block
-      :padding 2em 0 0
       a
-        :font-size 60px
-        :font-weight 600
-        :letter-spacing -4px
+        :font-size 3em
+        :font-weight bold
+        :letter-spacing -3px
+        :text-transform uppercase
         :display block
+        :line-height 1em
+        :padding 0 0.2em
         &:hover
+          :background #FF2B06
+          :color #FFF
           :text-decoration none
   #nav
     :float right
-    :padding 1em 0 0
-    :width auto
     ul
-      :list-style none
-      :height 3em
       li
-        :display inline
         :float left
-        :width auto
-        :text-align center
         a
           :display block
-          :font-size 20px
-          :font-weight 400
-          :padding 15px
-          :color #111
+          :font-size 1.5em
+          :font-weight normal
+          :padding 1.5em
+          :color #222
           &:hover
-            :background #F1F1F1
+            :background #E9E9E9
             :color #E12000
             :text-decoration none
             
+#content
+  :margin 3em 0
+  :background #E9E9E9
+  :-moz-border-radius 1em
+  :-webkit-border-radius 1em
+  ul
+    :padding 1em
+    :float left
+    li
+      :float left
+      :display block
+      :padding 1em
+      img
+        :display block
+        :float left
+      a
+        :display block
+        :font-size 1.2em
+        :line-height 1em
+        :margin 0 4em 0 2em
+        :color #999
+        &:hover
+          :color #111
+        
