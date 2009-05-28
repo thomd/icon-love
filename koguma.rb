@@ -76,10 +76,6 @@ get '/' do
   haml :index
 end
 
-get '/new' do
-  haml :new
-end
-
 post '/' do
   @url = Url.new(params[:url])
   error 400, haml("This is not a valid URL") if @url.invalid?
@@ -87,7 +83,11 @@ post '/' do
   @url.webroot_url
   @url.save_icon
   
-  haml "<img src=\"data:image/vnd.microsoft.icon;base64,#{@url.get_icon}\" />"
+  redirect '/'
+end
+
+get '/new' do
+  haml :new
 end
 
 get '/bookmarklet' do
