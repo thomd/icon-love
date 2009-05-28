@@ -1,12 +1,12 @@
 ## Koguma
 
-I love favicons!
+I love Icons!
 
-Koguma is a small site for collecting favicons.
+Koguma is a small site for collecting icons.
 
 ### Usage
 
-Use the bookmarklet for posting Sites with a favicon you like. Koguma display the favicons with a base64 data-URL.
+Use the bookmarklet for posting favicons or all sort of icons you like. Koguma display the icons with a base64 data-URL.
 
 ### Copying
 

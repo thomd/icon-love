@@ -33,7 +33,7 @@ class Url
   
   def save_icon
     @data = ActiveSupport::Base64.encode64s(open(@icon_url).read)
-    Favicon.create(:url => @url, :favicon_url => @icon_url, :data => @data, :created_on => Time.now)
+    Icon.create(:url => @url, :icon_url => @icon_url, :data => @data, :created_on => Time.now)
   end
   
   def get_icon
@@ -45,15 +45,15 @@ end
 
 # ----- model -----------------------------------------------------------------
 
-DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/favicon.sqlite3")
+DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/icons.sqlite3")
 
-class Favicon
+class Icon
   include DataMapper::Resource
-  property :id,             Serial
-  property :url,            String
-  property :favicon_url,    String
-  property :data,           Text
-  property :created_on,     DateTime
+  property :id,         Serial
+  property :url,        String
+  property :icon_url,   String
+  property :data,       Text
+  property :created_on, DateTime
 end
 
 DataMapper.auto_upgrade!
@@ -72,7 +72,7 @@ end
 
 
 get '/' do
-  @favicons = Favicon.all(:order => [:created_on.asc])
+  @icons = Icon.all(:order => [:created_on.asc])
   haml :index
 end
 

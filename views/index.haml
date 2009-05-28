@@ -1,5 +1,5 @@
 %ul
-  - @favicons.each do |favicon|
+  - @icons.each do |icon|
     %li
-      %img{:src => "data:image/vnd.microsoft.icon;base64," + favicon.data}
-      %a{:href => favicon.url}= favicon.url
+      %img{:src => "data:image/vnd.microsoft.icon;base64," + icon.data}
+      %a{:href => icon.url, :alt => icon.icon_url}= icon.url
