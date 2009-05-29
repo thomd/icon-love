@@ -1,10 +1,10 @@
-require 'koguma'
+require 'iconlove'
 require 'test/unit'
 require 'sinatra/test'
 
 set :environment, :test
 
-class KogumaTest < Test::Unit::TestCase
+class IconLoveTest < Test::Unit::TestCase
 
   include Sinatra::Test
 

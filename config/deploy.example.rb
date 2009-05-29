@@ -3,7 +3,7 @@ default_run_options[:pty] = true
 set :user, "{SSH USERNAME}"
 set :domain, "{DOMAIN OF APPLICATION}"
 set :host, "{DREAMHOST DOMAIN}"
-set :application, "koguma"
+set :application, "icon-love"
 
 set :repository,  "#{user}@#{host}:{PATH TO REPOSITORY}/#{application}.git"
 set :deploy_to, "/home/#{user}/#{domain}" 

@@ -15,11 +15,11 @@ disable :run
 set :raise_errors, true
 set :reload, true
 set :environment, (ENV['RACK_ENV'] || :development).to_sym
-set :app_file, 'koguma.rb'
+set :app_file, 'iconlove.rb'
 
 log = File.new(logfile, "a")
 STDOUT.reopen(log)
 STDERR.reopen(log)
 
-require 'koguma'
+require 'iconlove'
 run Sinatra::Application

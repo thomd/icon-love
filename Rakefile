@@ -1,6 +1,6 @@
 require "rubygems"
 require "rake"
-require "koguma"
+require "iconlove"
 
 task :default => "test"
 
