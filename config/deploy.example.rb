@@ -20,7 +20,6 @@ server domain, :app, :web, :db
 
 
 namespace :deploy do
-  
   desc "restart the application"
   task :restart do
     run "touch #{current_path}/tmp/restart.txt" 
@@ -32,7 +31,6 @@ after 'deploy:setup', 'gems:install'
 after 'deploy:update_code', 'gems:symlink', 'gems:file_cleanup'
 
 namespace :gems do
-
   desc "install rack and sinatra gems"
   task :install do
     run 'gem install rack -v 0.9.1'
@@ -54,5 +52,12 @@ namespace :gems do
     run "rm #{release_path}/Capfile"
     run "rm -R #{release_path}/test/"
   end
-  
+end
+
+namespace :db do
+  desc "make a database dump into shared/backup folder"
+  task :dump do
+    run "mkdir -p #{shared_path}/backup/"
+    run "sqlite3 #{current_path}/icons.sqlite3 .dump .quit >> #{shared_path}/backup/icons-#{Time.now.strftime('%Y-%m-%d')}.sql"
+  end
 end
