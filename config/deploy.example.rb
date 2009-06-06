@@ -55,9 +55,15 @@ namespace :gems do
 end
 
 namespace :db do
-  desc "make a database dump into shared/backup folder"
-  task :dump do
+  desc "export a database dump into shared/backup folder"
+  task :export do
     run "mkdir -p #{shared_path}/backup/"
-    run "sqlite3 #{current_path}/icons.sqlite3 .dump .quit >> #{shared_path}/backup/icons-#{Time.now.strftime('%Y-%m-%d')}.sql"
+    run "sqlite3 #{current_path}/icons.sqlite3 .dump .quit >> #{shared_path}/backup/icons.sql"
+    run "cp #{shared_path}/backup/icons.sql #{shared_path}/backup/icons.#{Time.now.strftime('%Y-%m-%d.%H-%M')}.sql"
+  end
+
+  desc "import the most current database dump back into database"
+  task :import do
+    run "sqlite3 icons.sql < #{shared_path}/backup/icons.sql"
   end
 end
