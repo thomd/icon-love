@@ -73,15 +73,22 @@ ul
     li
       :float left
       a
+        :text-align right
         :display block
         :font-size 1.5em
         :font-weight normal
         :padding 1.5em
         :color #333
+        :outline none
         &:hover
           :background #E9E9E9
           :color #E2007A
           :text-decoration none
+      a.selected
+        :color #E2007A
+        :text-decoration underline
+        &:hover
+          :background #FFF
             
 #content
   ul
@@ -114,3 +121,31 @@ ul
   :margin 2em auto
   p
     :margin 0 5em
+    
+#add-icon
+  :text-align center
+  
+#add-form
+  fieldset
+    :border none
+  #urlfield
+    :-moz-border-radius 5px
+    :background #EEE
+    :border 1px solid #CCC
+    :padding 5px
+    input
+      :width 400px
+      :font-size 1.2em
+    #urloptions
+      :margin 3px 5px 0 0
+      :text-align right
+      span
+        :color #E2007A
+        :text-decoration underline
+        :cursor pointer
+  button
+    :font-size 1.2em
+    :cursor pointer
+    :margin 10px 0 0
+    
+    
