@@ -7,24 +7,35 @@
     %script{:src => 'js/iconlove.js', :type => 'text/javascript'}
     %title I Love Icons
   %body
-    #header
-      #logo-wrapper
-        .shadow.left
-        #logo
-          %h1
-            %a{:href => "/"}
-              Icon Love
-              %span &#x007C;&#x02C8;&#x028C;&#x026A;&#x006B;&#x0252;&#x006E; &#x006C;&#x028C;&#x0076;&#x007C;
-        .shadow.right
-      #navigation
-        %ul
-          %li{:id => "add-icon"}
-            %a{:href => "/add"} Add Icon
-          %li
-            %a{:href => "/bookmarklet"} Bookmarklet
-    #content
-      = yield
-    #footer
+    #header-shadow
+      #header
+        #counter.head
+          37
+          %span
+            Icons
+        #phonetic-spelling.head
+          [&#x02C8;&#x028C;&#x026A;&#x006B;&#x0252;&#x006E; &#x006C;&#x028C;&#x0076;]
+        #logo.head
+          %a{:href => "/"}
+            Icon Love
+    #content-shadow
+      #content
+        #icons
+          = yield
+        #navigation
+          %ul
+            %li{:id => "add-icon"}
+              %a{:href => "/add"} Add new Icon
+            %li
+              %a{:href => "/bookmarklet"} Bookmarklet
+            %li
+              %a{:href => "http://twitter.com/iconlove"} Follow on Twitter
+            %li
+              %a{:href => "/feed"} RSS Feed
+            %li
+              %a{:href => "/about"} About
+    #footer-shadow
+      #footer
       %p
         %a{:href => "http://github.com/thomd/icon-love"} icon-love
         is a 

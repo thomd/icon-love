@@ -87,7 +87,8 @@ post '/' do
 end
 
 get '/add' do
-  haml :add, :layout => !request.xhr?
+#  haml :add, :layout => !request.xhr?
+  haml :add
 end
 
 get '/bookmarklet' do
