@@ -35,16 +35,16 @@ ul
   :border-top none
   :border-bottom none
   :float left
+  :background url(../img/clouds.jpg)
 
 #header
   :height 140px
   #logo,
-  #phonetic-spelling,
   #counter
     :float right
     :border-left 1px solid #111
     :margin-top 10px
-    :padding 5px
+    :padding 5px 10px
     :height 58px
   #logo
     :border-left none
@@ -54,8 +54,14 @@ ul
       :line-height 0.9
       :text-transform uppercase
       :letter-spacing -1px
+      :display block
       &:hover
         :text-decoration none
+    span
+      :color #E2007A
+      :font-size 22px
+      :letter-spacing 1px
+      :opacity 0.6
   #counter
     :font-size 56px
     :line-height 0.8
@@ -65,13 +71,9 @@ ul
       :display block
       :font-size 10px
       :margin-top 4px
-      :font-weight normal
+      :font-weight bold
       :letter-spacing 6px
       :text-transform uppercase
-  #phonetic-spelling
-    :color #666
-    :font-size 20px
-    :letter-spacing 1px
 
 #content
   #icons
