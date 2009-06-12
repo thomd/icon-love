@@ -27,8 +27,9 @@ namespace :deploy do
 end
 
 
-after 'deploy:setup', 'gems:install'
-after 'deploy:update_code', 'gems:symlink', 'gems:file_cleanup'
+after  'deploy:setup', 'gems:install'
+before 'deploy:update_code', 'db:export'
+after  'deploy:update_code', 'gems:symlink', 'gems:file_cleanup', 'db:import'
 
 namespace :gems do
   desc "install rack and sinatra gems"
@@ -58,12 +59,12 @@ namespace :db do
   desc "export a database dump into shared/backup folder"
   task :export do
     run "mkdir -p #{shared_path}/backup/"
-    run "sqlite3 #{current_path}/icons.sqlite3 .dump .quit >> #{shared_path}/backup/icons.sql"
+    run "sqlite3 #{current_path}/icons.sqlite3 .dump .quit > #{shared_path}/backup/icons.sql"
     run "cp #{shared_path}/backup/icons.sql #{shared_path}/backup/icons.#{Time.now.strftime('%Y-%m-%d.%H-%M')}.sql"
   end
 
   desc "import the most current database dump back into database"
   task :import do
-    run "sqlite3 icons.sql < #{shared_path}/backup/icons.sql"
+    run "sqlite3 #{release_path}/icons.sqlite3 < #{shared_path}/backup/icons.sql"
   end
 end
